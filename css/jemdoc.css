@@ -148,6 +148,10 @@ h1, h2, h3 {
     border-bottom: 1px solid #aaaaaa;
 }
 
+h1 p {
+    color: #000000;
+}
+
 h1 {
     font-size: 165%;
     padding-bottom: 0.3em;
