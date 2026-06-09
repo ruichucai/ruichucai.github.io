@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ruichucai.github.io/sitemap.xml
