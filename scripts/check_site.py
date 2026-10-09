@@ -52,7 +52,7 @@ print("Site checks passed.")
 def audit_publications(rel, text):
     from html import unescape
     match = re.search(
-        r"<h2\\b[^>]*>\\s*(?:Selected Publications|主要论文).*?</h2>(.*?)(?=<h2\\b|$)",
+        r"<h2\b[^>]*>\s*(?:Selected Publications|主要论文).*?</h2>(.*?)(?=<h2\b|$)",
         text, re.I | re.S,
     )
     if not match:
@@ -60,15 +60,15 @@ def audit_publications(rel, text):
         return
 
     section = match.group(1)
-    items = re.findall(r"<li\\b[^>]*>(.*?)</li\\s*>", section, re.I | re.S)
+    items = re.findall(r"<li\b[^>]*>(.*?)</li\s*>", section, re.I | re.S)
     normalized = []
     linked_records = 0
     for item in items:
-        if re.search(r"<a\\b[^>]*href=[\\"']https?://", item, re.I):
+        if re.search(r"<a\b[^>]*href=[\"']https?://", item, re.I):
             linked_records += 1
         visible = re.sub(r"<[^>]+>", " ", item)
         visible = unescape(visible)
-        visible = re.sub(r"\\s+", " ", visible).strip().lower()
+        visible = re.sub(r"\s+", " ", visible).strip().lower()
         # Ignore empty/list-layout artifacts; preserve the full citation for duplicate checks.
         if visible:
             normalized.append(visible)
@@ -86,10 +86,10 @@ def audit_publications(rel, text):
         print(f"Publication audit: {rel}: {len(normalized)} records; no exact duplicates detected")
 
     checks = [
-        (r",\\s*,", "repeated comma"),
+        (r",\s*,", "repeated comma"),
         (r",(?=[A-Za-z])", "comma immediately followed by a name/word"),
-        (r"</li\\s*>\\s*</li\\s*>", "consecutive closing list-item tags"),
-        (r"</i>\\s*</b>", "potentially mismatched italic/bold closing tags"),
+        (r"</li\s*>\s*</li\s*>", "consecutive closing list-item tags"),
+        (r"</i>\s*</b>", "potentially mismatched italic/bold closing tags"),
     ]
     for pattern, label in checks:
         count = len(re.findall(pattern, section, re.I))
