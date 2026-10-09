@@ -21,3 +21,5 @@ jobs:
           python-version: "3.x"
       - name: Run read-only site checks
         run: python scripts/check_site.py
+      - name: Check publication and project quality
+        run: python scripts/check_publications.py
