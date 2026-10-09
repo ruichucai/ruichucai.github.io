@@ -52,7 +52,7 @@ print("Site checks passed.")
 def audit_publications(rel, text):
     from html import unescape
     match = re.search(
-        r"<h2\\b[^>]*>\\s*(?:Selected Publications|主要论文)\\b?.*?</h2>(.*?)(?=<h2\\b|$)",
+        r"<h2\\b[^>]*>\\s*(?:Selected Publications|主要论文).*?</h2>(.*?)(?=<h2\\b|$)",
         text, re.I | re.S,
     )
     if not match:
