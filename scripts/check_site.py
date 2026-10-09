@@ -62,13 +62,20 @@ def audit_publications(rel, text):
     section = match.group(1)
     items = re.findall(r"<li\\b[^>]*>(.*?)</li\\s*>", section, re.I | re.S)
     normalized = []
+    linked_records = 0
     for item in items:
+        if re.search(r"<a\\b[^>]*href=[\\"']https?://", item, re.I):
+            linked_records += 1
         visible = re.sub(r"<[^>]+>", " ", item)
         visible = unescape(visible)
         visible = re.sub(r"\\s+", " ", visible).strip().lower()
         # Ignore empty/list-layout artifacts; preserve the full citation for duplicate checks.
         if visible:
             normalized.append(visible)
+
+    print(f"Publication links: {rel}: {linked_records}/{len(normalized)} records have an external HTTP(S) link")
+    if normalized and linked_records < len(normalized):
+        print(f"WARNING: {rel}: {len(normalized) - linked_records} publication record(s) have no external HTTP(S) link")
 
     duplicates = sorted({entry for entry in normalized if normalized.count(entry) > 1})
     if duplicates:
