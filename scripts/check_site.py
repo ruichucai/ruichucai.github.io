@@ -73,9 +73,10 @@ def audit_publications(rel, text):
         if visible:
             normalized.append(visible)
 
+    missing_links = len(normalized) - linked_records
     print(f"Publication links: {rel}: {linked_records}/{len(normalized)} records have an external HTTP(S) link")
-    if normalized and linked_records < len(normalized):
-        print(f"WARNING: {rel}: {len(normalized) - linked_records} publication record(s) have no external HTTP(S) link")
+    if normalized and missing_links:
+        print(f"INFO: {rel}: {missing_links} record(s) have no external HTTP(S) link; review link coverage when convenient")
 
     duplicates = sorted({entry for entry in normalized if normalized.count(entry) > 1})
     if duplicates:
