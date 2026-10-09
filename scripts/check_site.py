@@ -45,3 +45,51 @@ if ERRORS:
         print(f" - {error}")
     sys.exit(1)
 print("Site checks passed.")
+
+
+# Publication-list audit: report-only so legacy bibliography inconsistencies do not
+# block unrelated content updates. These checks never rewrite academic records.
+def audit_publications(rel, text):
+    from html import unescape
+    match = re.search(
+        r"<h2\\b[^>]*>\\s*(?:Selected Publications|主要论文)\\b?.*?</h2>(.*?)(?=<h2\\b|$)",
+        text, re.I | re.S,
+    )
+    if not match:
+        print(f"WARNING: {rel}: publication section not found; audit skipped")
+        return
+
+    section = match.group(1)
+    items = re.findall(r"<li\\b[^>]*>(.*?)</li\\s*>", section, re.I | re.S)
+    normalized = []
+    for item in items:
+        visible = re.sub(r"<[^>]+>", " ", item)
+        visible = unescape(visible)
+        visible = re.sub(r"\\s+", " ", visible).strip().lower()
+        # Ignore empty/list-layout artifacts; preserve the full citation for duplicate checks.
+        if visible:
+            normalized.append(visible)
+
+    duplicates = sorted({entry for entry in normalized if normalized.count(entry) > 1})
+    if duplicates:
+        print(f"WARNING: {rel}: {len(duplicates)} exact duplicate publication record(s) detected")
+        for entry in duplicates:
+            print(f"  - duplicate: {entry[:180]}")
+    else:
+        print(f"Publication audit: {rel}: {len(normalized)} records; no exact duplicates detected")
+
+    checks = [
+        (r",\\s*,", "repeated comma"),
+        (r",(?=[A-Za-z])", "comma immediately followed by a name/word"),
+        (r"</li\\s*>\\s*</li\\s*>", "consecutive closing list-item tags"),
+        (r"</i>\\s*</b>", "potentially mismatched italic/bold closing tags"),
+    ]
+    for pattern, label in checks:
+        count = len(re.findall(pattern, section, re.I))
+        if count:
+            print(f"WARNING: {rel}: {count} possible formatting issue(s): {label}")
+
+# Run advisory publication checks on both language versions. Warnings are
+# intentionally non-fatal until records are reviewed by a human.
+for rel in ("index.html", "zh-cn/index.html"):
+    audit_publications(rel, (ROOT / rel).read_text(encoding="utf-8"))
