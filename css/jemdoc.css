@@ -379,3 +379,32 @@ table.imgtable, table.imgtable td {
     border: none;
     text-align: left;
 }
+
+/* Small-screen layout for the profile header. */
+@media screen and (max-width: 640px) {
+    body {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        padding: 8px 12px 20px;
+    }
+
+    #layout-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #layout-content > table:first-of-type,
+    #layout-content > table:first-of-type tbody,
+    #layout-content > table:first-of-type tr,
+    #layout-content > table:first-of-type td {
+        display: block;
+        width: auto !important;
+    }
+
+    #layout-content > table:first-of-type td img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+}
