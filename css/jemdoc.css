@@ -443,3 +443,31 @@ h2[id] {
         font-size: 0.9em;
     }
 }
+
+
+/* Improve readability of long publication lists without changing records. */
+.publication-list ul {
+    padding-left: 1.5em;
+}
+
+.publication-list li {
+    margin-top: 0.7em;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.publication-list li a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.12em;
+}
+
+@media screen and (max-width: 640px) {
+    .publication-list ul {
+        padding-left: 1.2em;
+    }
+
+    .publication-list li {
+        margin-top: 0.85em;
+        line-height: 1.6;
+    }
+}
