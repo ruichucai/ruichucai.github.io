@@ -72,3 +72,23 @@ ul{padding-left:22px}
 button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #91bce0;outline-offset:2px}
 @media(max-width:760px){.publication-toolbar{grid-template-columns:1fr 1fr}.publication-search{grid-column:1/-1}.publication-clear{grid-column:1/-1}.publication-count{grid-column:1/-1}.project-list{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:430px){.publication-toolbar{grid-template-columns:1fr}.publication-search,.publication-clear,.publication-count{grid-column:1}.project-grid{grid-template-columns:1fr}}
+
+/* Research-group profile and curated publication highlights */
+.lab-showcase,.featured-publications{padding:30px 0 34px;margin:10px 0 18px;border-bottom:1px solid var(--line)}
+.section-eyebrow{margin:0 0 7px;color:var(--blue-2);font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.lab-showcase h2,.featured-publications h2{margin-top:0!important}
+.lab-intro,.featured-intro{max-width:850px;color:#46586d;font-size:15px;line-height:1.8}
+.lab-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
+.lab-link-card{display:flex;flex-direction:column;gap:7px;padding:18px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(180deg,#fff,#f8fafc);color:var(--muted)!important;font-size:13px;line-height:1.55}
+.lab-link-card:hover,.featured-paper:hover{border-color:#b9cddd;box-shadow:0 8px 22px rgba(20,50,80,.06)}
+.lab-link-title{color:var(--blue);font-size:16px;font-weight:750}
+.lab-contact{margin:12px 0 0;color:var(--muted);font-size:13px}
+.featured-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:20px}
+.featured-paper{display:flex;flex-direction:column;align-items:flex-start;padding:19px;border:1px solid var(--line);border-radius:10px;background:#fff;transition:box-shadow .18s ease,border-color .18s ease}
+.paper-venue{display:inline-block;margin-bottom:10px;padding:5px 9px;border-radius:999px;background:#edf3f8;color:#285779;font-size:11px;font-weight:800;letter-spacing:.03em}
+.featured-paper h3{margin:0 0 9px;font-size:16px;line-height:1.5}
+.featured-paper h3 a{color:var(--ink)!important}
+.featured-paper p{margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.65}
+.paper-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:auto;font-size:12px;font-weight:700}
+.paper-links a{white-space:nowrap}
+@media(max-width:760px){.lab-links{grid-template-columns:1fr}.featured-grid{grid-template-columns:1fr}.lab-showcase,.featured-publications{padding:24px 0}}
