@@ -15,7 +15,7 @@
 <body> 
 <div id="layout-content" class="site-shell">
     <a href="/">English Profile</a>
-<nav class="profile-nav" aria-label="页面导航"><strong>导航</strong><a href="#research-interests">研究方向</a><a href="#news">新闻</a><a href="#selected-projects">项目</a><a href="#open-source-projects">开源成果</a><a href="#publications">论文</a><a href="#honors">荣誉</a><a href="#services">学术服务</a><a class="language-link" href="/">English ↗</a></nav>
+<nav class="profile-nav" aria-label="页面导航"><strong>导航</strong><a href="#research-interests">研究方向</a><a href="#news">新闻</a><a href="#dmir-lab">DMIR 实验室</a><a href="#selected-projects">项目</a><a href="#selected-publications">代表论文</a><a href="#publications">论文列表</a><a href="#honors">荣誉</a><a href="#services">学术服务</a><a class="language-link" href="/">English ↗</a></nav>
 
 <section class="profile-hero" aria-label="学术主页"><div><p class="profile-kicker">Academic Profile · Causal AI</p><h1>Ruichu Cai <span>蔡瑞初</span></h1><p class="profile-role">二级教授 · 博士生导师</p><p class="profile-affiliation">广东工业大学 · 数据挖掘与信息检索实验室（DMIR）主任</p><p class="profile-summary">研究方向包括因果发现、因果推断、因果表征学习与可信因果人工智能。领导 DMIR 实验室，致力于发展面向科学发现和真实决策场景的因果理论、方法与模型。</p><div class="profile-tags"><span class="profile-tag">IEEE TPAMI 副主编</span><span class="profile-tag">Neural Networks 执行编委</span><span class="profile-tag">ICML / NeurIPS / ICLR 领域主席</span></div><div class="profile-actions"><a class="primary" href="https://scholar.google.com/citations?user=gG4HJ4UAAAAJ">Google Scholar</a><a href="https://dblp.org/pid/09/6889">DBLP</a><a href="https://github.com/DMIRLAB-Group">DMIR GitHub</a><a href="mailto:cairuichu@gmail.com">联系邮箱</a></div></div><div class="profile-photo-wrap"><img class="profile-photo" src="/images/crc_photo.jpg" alt="蔡瑞初教授"></div></section><section class="research-overview" aria-label="研究方向"><h2>研究方向</h2><div class="research-grid"><article class="research-card"><h3>因果发现</h3><p>因果结构学习、因果机制建模与复杂数据中的因果发现。</p></article><article class="research-card"><h3>因果推断</h3><p>个体因果效应、长期因果效应与网络干扰下的因果估计。</p></article><article class="research-card"><h3>因果表征学习</h3><p>不变表征、解耦学习与可迁移因果表示。</p></article><article class="research-card"><h3>因果人工智能</h3><p>因果基础模型及其在科学研究和产业场景中的应用。</p></article></div></section>
 
@@ -265,6 +265,18 @@
     </li>
 </ul>
 
+<section id="dmir-lab" class="lab-showcase">
+  <p class="section-eyebrow">Research Group</p>
+  <h2>数据挖掘与信息检索实验室（DMIR）</h2>
+  <p class="lab-intro">广东工业大学数据挖掘与信息检索实验室（DMIR）致力于因果发现、因果推断、因果表征学习与可信人工智能研究，围绕数据驱动的科学发现和决策问题，开展理论方法、模型、评测基准与开源工具研发。</p>
+  <div class="lab-links">
+    <a class="lab-link-card" href="https://github.com/DMIRLAB-Group/"><span class="lab-link-title">DMIR GitHub</span><span>浏览实验室公开代码与研究项目 ↗</span></a>
+    <a class="lab-link-card" href="https://tsc-fm.dmirlab.com/"><span class="lab-link-title">TSC-FM Benchmark</span><span>时间序列分类基础模型评测平台 ↗</span></a>
+    <a class="lab-link-card" href="https://github.com/DMIRLAB-Group/CDFM"><span class="lab-link-title">CDFM</span><span>面向零样本因果发现的预训练基础模型 ↗</span></a>
+  </div>
+  <p class="lab-contact">欢迎学术合作与交流：<a href="mailto:cairuichu@gmail.com">联系实验室</a>。</p>
+</section>
+
 <h2 id="open-source-projects">代表性开源项目</h2>
 <ul>
   <li><a href="https://github.com/DMIRLAB-Group/CDFM"><strong>CDFM</strong></a>：面向零样本因果发现任务的预训练基础模型。</li>
@@ -299,7 +311,19 @@
 	
 
 
-<h2 id="publications">主要论文<small></small></h2>
+<section id="selected-publications" class="featured-publications">
+  <p class="section-eyebrow">Selected Research</p>
+  <h2>代表性论文</h2>
+  <p class="featured-intro">以下为部分代表性研究成果。完整论文目录及搜索筛选功能请见下方论文列表。</p>
+  <div class="featured-grid">
+    <article class="featured-paper"><span class="paper-venue">ICML 2026 · Oral</span><h3><a href="https://icml.cc/virtual/2026/poster/66099">On the Identifiability of Poisson Branching Structural Causal Model Under Latent Confounding</a></h3><p>研究潜在混杂条件下因果结构的可识别性。</p><div class="paper-links"><a href="https://icml.cc/virtual/2026/poster/66099">会议页面 ↗</a><a href="https://github.com/DMIRLAB-Group/LC-PB-SCM">代码 ↗</a></div></article>
+    <article class="featured-paper"><span class="paper-venue">IEEE TPAMI 2026</span><h3><a href="https://arxiv.org/abs/2502.19741">Causal Effect Estimation under Networked Interference without Networked Unconfoundedness Assumption</a></h3><p>研究网络干扰场景下较弱假设条件下的因果效应估计。</p><div class="paper-links"><a href="https://arxiv.org/abs/2502.19741">预印本 ↗</a></div></article>
+    <article class="featured-paper"><span class="paper-venue">ICLR 2025</span><h3><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/5726513facc85f802be4a25e77fb9765-Abstract-Conference.html">On the Identification of Temporal Causal Representation with Instantaneous Dependence</a></h3><p>研究存在瞬时依赖时序因果表征的识别问题。</p><div class="paper-links"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/5726513facc85f802be4a25e77fb9765-Abstract-Conference.html">论文页面 ↗</a><a href="https://github.com/DMIRLAB-Group/IDOL">代码 ↗</a></div></article>
+    <article class="featured-paper"><span class="paper-venue">NeurIPS 2024</span><h3><a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/15aaa9224a35527d76188b4d40e02308-Paper-Conference.pdf">On the Identifiability of Poisson Branching Structural Causal Model Using Probability Generating Function</a></h3><p>基于概率生成函数研究 Poisson 分枝结构因果模型的可识别性。</p><div class="paper-links"><a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/15aaa9224a35527d76188b4d40e02308-Paper-Conference.pdf">论文 PDF ↗</a><a href="https://github.com/DMIRLAB-Group/PBSCM-PGF">代码 ↗</a></div></article>
+  </div>
+</section>
+
+<h2 id="publications">完整论文列表<small></small></h2>
 <div class="publication-list">
 
 <font size="3"><b>因果关系发现</b></font>
