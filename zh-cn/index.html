@@ -278,72 +278,89 @@
 </section>
 
 <section id="open-source-projects" class="open-source-showcase">
-  <p class="section-eyebrow">Open-source Research & Tools</p>
-  <h2>代表性开源项目</h2>
-  <p class="showcase-intro">展示课题组研发的研究模型、可复现评测基准，以及参与贡献的社区工具。</p>
+  <p class="section-eyebrow">Research Software · Benchmarks · Community Tools</p>
+  <h2>开源项目与科研工具</h2>
+  <p class="showcase-intro">以下介绍选取自对应项目的官方仓库与主页，展示研究目标、核心能力、方法示意图和使用入口。</p>
 
-  <article class="opensource-card opensource-card-wide">
-    <div class="opensource-visual">
-      <a href="https://github.com/DMIRLAB-Group/CDFM" aria-label="打开 CDFM GitHub 仓库">
-        <img src="https://raw.githubusercontent.com/DMIRLAB-Group/CDFM/refs/heads/main/docs/figures/benchmark_overview.png" alt="CDFM 官方仓库中的基础模型预训练与因果发现评测框架示意图" loading="lazy">
-      </a>
-      <span class="visual-credit">图片来源：CDFM 官方仓库</span>
-    </div>
-    <div class="opensource-copy">
+  <article class="opensource-feature">
+    <div class="opensource-feature-head">
       <div class="project-kickers"><span>DMIR Lab</span><span>Foundation Model</span><span>Apache 2.0</span></div>
       <h3><a href="https://github.com/DMIRLAB-Group/CDFM">CDFM — 因果发现基础模型</a></h3>
-      <p>CDFM 是面向零样本因果发现的预训练基础模型。给定观测数据，模型能够通过一次前向推理预测因果图，并利用大量多样化合成结构因果模型中学习到的知识进行泛化。</p>
-      <ul class="project-highlights">
-        <li><strong>零样本推理：</strong>同一个预训练模型可处理不同样本规模和变量数量的数据集。</li>
-        <li><strong>广泛实验评测：</strong>官方仓库报告了跨 15 类机制族及真实数据基准的比较结果。</li>
-        <li><strong>扩展能力：</strong>模型还包含缺失值填补模块。</li>
-      </ul>
-      <div class="project-actions"><a href="https://github.com/DMIRLAB-Group/CDFM">GitHub 仓库 ↗</a><a href="https://arxiv.org/abs/2607.11508">论文 ↗</a><a href="https://huggingface.co/DMIRLAB/CDFM">Hugging Face 模型 ↗</a></div>
+      <p>CDFM 是面向零样本因果发现的预训练基础模型。模型以观测数据为输入，通过一次前向推理预测因果图。其预训练过程利用多样化的合成结构因果模型，使模型学习有助于因果结构推断的统计不对称性。</p>
     </div>
-  </article>
-
-  <article class="opensource-card">
-    <div class="benchmark-visual" role="img" aria-label="TSC-FM 基准概览：220个数据集、140个单变量、80个多变量、4种评测设置">
-      <div class="benchmark-topline"><span>TSC-FM BENCHMARK</span><span>官方评测平台</span></div>
-      <div class="benchmark-main-stat"><strong>220</strong><span>个数据集</span></div>
-      <div class="benchmark-split"><div><strong>140</strong><span>单变量</span><i style="--bar-width:63.6%"></i></div><div><strong>80</strong><span>多变量</span><i style="--bar-width:36.4%"></i></div></div>
-      <div class="benchmark-track-row"><span>Standard</span><span>Low-shot</span><span>ICL</span><span>Frozen-probe</span></div>
-      <div class="benchmark-foot">数据集等权重 · Accuracy</div>
-    </div>
-    <div class="opensource-copy">
-      <div class="project-kickers"><span>DMIR Lab × Huawei Noah’s Ark Lab</span><span>Benchmark</span></div>
-      <h3><a href="https://tsc-fm.dmirlab.com/">TSC-FM Benchmark — 时间序列分类基础模型评测基准</a></h3>
-      <p>面向时间序列分类基础模型的公开评测平台，提供可搜索排行榜、数据集概况、模型详情、能力分析以及完整评测协议。</p>
-      <ul class="project-highlights">
-        <li><strong>220 个数据集：</strong>官方主页当前列出 140 个单变量数据集和 80 个多变量数据集。</li>
-        <li><strong>四类评测视角：</strong>Standard、Low-shot、Training-Free / In-Context Learning 和 Frozen-Probe。</li>
-        <li><strong>可审计比较：</strong>采用数据集等权重，并明确展示评测设置与结果覆盖范围。</li>
-      </ul>
-      <div class="project-actions"><a href="https://tsc-fm.dmirlab.com/">访问评测平台 ↗</a><a href="https://tsc-fm.dmirlab.com/methods">模型目录 ↗</a><a href="https://tsc-fm.dmirlab.com/capability-map">能力图谱 ↗</a><a href="https://tsc-fm.dmirlab.com/evaluation">评测协议 ↗</a></div>
-      <p class="benchmark-note">数据为 2026 年 11 月 16 日查看官方主页时的公开信息。</p>
-    </div>
-  </article>
-
-  <article class="opensource-card">
-    <div class="opensource-visual causal-visual">
-      <a href="https://github.com/py-why/causal-learn" aria-label="打开 causal-learn GitHub 仓库">
-        <img src="https://raw.githubusercontent.com/py-why/causal-learn/main/docs/source/table_modified_new.png" alt="causal-learn 官方文档中的方法概览图片" loading="lazy">
+    <figure class="opensource-figure">
+      <a href="https://github.com/DMIRLAB-Group/CDFM/blob/main/docs/figures/benchmark_overview.png">
+        <img src="https://raw.githubusercontent.com/DMIRLAB-Group/CDFM/main/docs/figures/benchmark_overview.png" alt="CDFM 官方仓库中的基准评测与模型概览图" loading="lazy">
       </a>
-      <span class="visual-credit">图片来源：causal-learn 官方文档</span>
+      <figcaption>官方基准评测概览图 · CDFM 仓库</figcaption>
+    </figure>
+    <div class="project-detail-grid">
+      <div><span class="detail-index">01</span><strong>零样本因果图推断</strong><p>同一个预训练模型面向不同样本规模和变量数量的数据集，无需针对每个任务重新微调。</p></div>
+      <div><span class="detail-index">02</span><strong>多机制族评测</strong><p>项目 README 报告了跨 15 类机制族及真实数据基准的实验比较。</p></div>
+      <div><span class="detail-index">03</span><strong>缺失值填补</strong><p>除因果图发现外，模型还提供内置的缺失值填补模块。</p></div>
     </div>
-    <div class="opensource-copy">
-      <div class="project-kickers"><span>Community Project</span><span>Python Toolkit</span><span>MIT License</span></div>
-      <h3><a href="https://github.com/py-why/causal-learn">causal-learn — Python 因果发现工具库</a></h3>
-      <p>面向研究人员和实践者的开源 Python 因果发现工具库，集成多类因果发现方法，并提供易用 API、模块化组件和配套文档。</p>
-      <ul class="project-highlights">
-        <li><strong>多类方法：</strong>约束类、评分类、函数因果模型、隐变量因果表征学习、基于排列的方法以及 Granger 因果分析。</li>
-        <li><strong>可复用组件：</strong>独立性检验、评分函数、图操作和评估工具。</li>
-        <li><strong>社区生态：</strong>属于 PyWhy 开源生态，相关工作发表于 Journal of Machine Learning Research。</li>
-      </ul>
-      <div class="project-actions"><a href="https://github.com/py-why/causal-learn">GitHub 仓库 ↗</a><a href="https://causal-learn.readthedocs.io/en/latest/">项目文档 ↗</a><a href="https://www.jmlr.org/papers/v25/23-0970.html">JMLR 论文 ↗</a></div>
+    <div class="project-demo">
+      <div><span class="demo-label">QUICK START</span><code>pip install cdfm-base</code></div>
+      <pre><code>from cdfm import CDFM
+
+model = CDFM.from_pretrained("DMIRLAB/CDFM")
+result = model.predict(data)
+causal_graph = result.adjacency</code></pre>
     </div>
+    <div class="project-actions"><a href="https://github.com/DMIRLAB-Group/CDFM">GitHub 仓库 ↗</a><a href="https://arxiv.org/abs/2607.11508">论文 ↗</a><a href="https://huggingface.co/DMIRLAB/CDFM">Hugging Face 模型 ↗</a></div>
   </article>
-  <p class="opensource-disclaimer">项目介绍与图片来自各项目官方仓库或主页。causal-learn 属于社区开源项目，并非 DMIR 实验室自有仓库。</p>
+
+  <article class="opensource-feature">
+    <div class="project-kickers"><span>DMIR Lab × Huawei Noah’s Ark Lab</span><span>Benchmark & Leaderboard</span></div>
+    <h3><a href="https://tsc-fm.dmirlab.com/">TSC-FM Benchmark — 时间序列分类基础模型评测基准</a></h3>
+    <p>TSC-FM 是面向时间序列分类基础模型的公开评测基准。官方网站整合了排行榜、数据集概况、方法介绍、能力分析，以及支持透明、可复现比较的评测协议。</p>
+    <div class="tscfm-visual" aria-label="TSC-FM 评测框架示意图">
+      <div class="tscfm-visual-title"><span>TSC-FM</span><span>BENCHMARK FRAMEWORK</span></div>
+      <div class="tscfm-core"><strong>时间序列分类</strong><span>基础模型评测框架</span></div>
+      <div class="tscfm-branches">
+        <div><b>Standard</b><span>官方训练/测试划分</span></div>
+        <div><b>Low-shot</b><span>匹配的少样本标签预算</span></div>
+      </div>
+      <div class="tscfm-methods">
+        <span>Training-Free / ICL</span><span>Frozen-Probe</span>
+      </div>
+      <div class="tscfm-foot">排行榜 · 数据集概况 · 能力图谱 · 评测协议</div>
+    </div>
+    <div class="project-detail-grid">
+      <div><span class="detail-index">01</span><strong>可比较的排行榜</strong><p>提供 Overall、Standard 和 Low-shot 等结果视图，并在适用范围内展示数据模态和数据集覆盖情况。</p></div>
+      <div><span class="detail-index">02</span><strong>透明的评测协议</strong><p>协议区分标签预算与预测方式：Standard、Low-shot 描述标签预算；Training-Free / ICL、Frozen-Probe 描述评测方法。</p></div>
+      <div><span class="detail-index">03</span><strong>模型能力分析</strong><p>按照数据模态和数据集属性分析汇总结果，并明确展示统计范围与覆盖情况。</p></div>
+    </div>
+    <div class="project-actions"><a href="https://tsc-fm.dmirlab.com/">官方评测平台 ↗</a><a href="https://tsc-fm.dmirlab.com/leaderboard">排行榜 ↗</a><a href="https://tsc-fm.dmirlab.com/benchmarks">数据集概况 ↗</a><a href="https://tsc-fm.dmirlab.com/capability-map">能力图谱 ↗</a><a href="https://tsc-fm.dmirlab.com/evaluation">评测协议 ↗</a></div>
+    <p class="benchmark-note">数据集数量、排行榜分数和覆盖范围以官方平台实时公布的信息为准，避免在个人主页中固化可能变化的统计数字。</p>
+  </article>
+
+  <article class="opensource-feature">
+    <div class="project-kickers"><span>PyWhy Ecosystem</span><span>Python Toolkit</span><span>Community Project</span></div>
+    <h3><a href="https://github.com/py-why/causal-learn">causal-learn — Python 因果发现工具库</a></h3>
+    <p>causal-learn 是面向研究人员和实践者的开源 Python 因果发现工具库。它集成了多类因果发现算法，同时提供模块化组件，便于开发和评估新的因果发现方法。</p>
+    <figure class="opensource-figure causal-figure">
+      <a href="https://github.com/py-why/causal-learn/blob/main/docs/source/search_methods_index/Constraint-based%20causal%20discovery%20methods/pag.png">
+        <img src="https://raw.githubusercontent.com/py-why/causal-learn/main/docs/source/search_methods_index/Constraint-based%20causal%20discovery%20methods/pag.png" alt="causal-learn 官方文档中的部分祖先图示例" loading="lazy">
+      </a>
+      <figcaption>部分祖先图示例 · causal-learn 官方文档</figcaption>
+    </figure>
+    <div class="project-detail-grid">
+      <div><span class="detail-index">01</span><strong>多类因果发现范式</strong><p>包括约束类、评分类、函数因果模型、隐变量因果表征、基于排列的方法和 Granger 因果方法。</p></div>
+      <div><span class="detail-index">02</span><strong>可复用的研究组件</strong><p>提供独立性检验、评分函数、图操作和评估工具，支持进一步的方法开发。</p></div>
+      <div><span class="detail-index">03</span><strong>研究与学习资源</strong><p>提供 Python API、示例、项目文档，并有经过同行评审的 JMLR 软件论文。</p></div>
+    </div>
+    <div class="project-demo">
+      <div><span class="demo-label">INSTALL</span><code>pip install causal-learn</code></div>
+      <pre><code>from causallearn.search.ConstraintBased.PC import pc
+from causallearn.utils.cit import fisherz
+
+cg = pc(data, 0.05, fisherz)
+cg.draw_pydot_graph()</code></pre>
+    </div>
+    <div class="project-actions"><a href="https://github.com/py-why/causal-learn">GitHub 仓库 ↗</a><a href="https://causal-learn.readthedocs.io/en/latest/">项目文档 ↗</a><a href="https://www.jmlr.org/papers/v25/23-0970.html">JMLR 论文 ↗</a></div>
+    <p class="opensource-disclaimer">causal-learn 是 PyWhy 生态中的社区项目。此处将其作为相关研究工具介绍，并不表示该仓库由 DMIR 实验室所有。</p>
+  </article>
 </section>
 
 <h2 id="industry-collaboration">产业合作</h2>
