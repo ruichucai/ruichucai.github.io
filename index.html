@@ -294,72 +294,89 @@ and a Capability Map that reveals model strengths and limitations beyond overall
 </section>
 
 <section id="open-source-projects" class="open-source-showcase">
-  <p class="section-eyebrow">Open-source Research & Tools</p>
-  <h2>Featured Open-source Projects</h2>
-  <p class="showcase-intro">Research models, reproducible benchmarks, and community tools developed by or contributed to by our group.</p>
+  <p class="section-eyebrow">Research Software · Benchmarks · Community Tools</p>
+  <h2>Open-source Projects</h2>
+  <p class="showcase-intro">A closer look at selected research software and evaluation resources. The descriptions below follow the corresponding project repositories and official project pages.</p>
 
-  <article class="opensource-card opensource-card-wide">
-    <div class="opensource-visual">
-      <a href="https://github.com/DMIRLAB-Group/CDFM" aria-label="Open the CDFM GitHub repository">
-        <img src="https://raw.githubusercontent.com/DMIRLAB-Group/CDFM/refs/heads/main/docs/figures/benchmark_overview.png" alt="Official CDFM benchmark overview figure showing the foundation-model pretraining and causal discovery evaluation framework" loading="lazy">
-      </a>
-      <span class="visual-credit">Figure: CDFM official repository</span>
-    </div>
-    <div class="opensource-copy">
+  <article class="opensource-feature">
+    <div class="opensource-feature-head">
       <div class="project-kickers"><span>DMIR Lab</span><span>Foundation Model</span><span>Apache 2.0</span></div>
       <h3><a href="https://github.com/DMIRLAB-Group/CDFM">CDFM — Causal Discovery Foundation Model</a></h3>
-      <p>A pretrained foundation model for zero-shot causal discovery. Given observational data, CDFM predicts a causal graph in a single forward pass, using knowledge learned from a diverse collection of synthetic structural causal models.</p>
-      <ul class="project-highlights">
-        <li><strong>Zero-shot inference:</strong> one pretrained checkpoint supports datasets with different sample sizes and variable counts.</li>
-        <li><strong>Broad evaluation:</strong> the official repository reports comparisons across 15 mechanism families and real-world benchmarks.</li>
-        <li><strong>Beyond graph discovery:</strong> includes a missing-value imputation head.</li>
-      </ul>
-      <div class="project-actions"><a href="https://github.com/DMIRLAB-Group/CDFM">GitHub Repository ↗</a><a href="https://arxiv.org/abs/2607.11508">Paper ↗</a><a href="https://huggingface.co/DMIRLAB/CDFM">Hugging Face ↗</a></div>
+      <p>CDFM is a pretrained foundation model for zero-shot causal discovery. It takes observational data as input and predicts a causal graph in a single forward pass. Its pretraining uses a diverse collection of synthetic structural causal models to learn statistical asymmetries useful for causal structure inference.</p>
     </div>
-  </article>
-
-  <article class="opensource-card">
-    <div class="benchmark-visual" role="img" aria-label="TSC-FM benchmark snapshot: 220 datasets, 140 univariate, 80 multivariate, and four evaluation tracks">
-      <div class="benchmark-topline"><span>TSC-FM BENCHMARK</span><span>LIVE PROJECT</span></div>
-      <div class="benchmark-main-stat"><strong>220</strong><span>unique datasets</span></div>
-      <div class="benchmark-split"><div><strong>140</strong><span>Univariate</span><i style="--bar-width:63.6%"></i></div><div><strong>80</strong><span>Multivariate</span><i style="--bar-width:36.4%"></i></div></div>
-      <div class="benchmark-track-row"><span>Standard</span><span>Low-shot</span><span>ICL</span><span>Frozen-probe</span></div>
-      <div class="benchmark-foot">Equal dataset weighting · Accuracy</div>
-    </div>
-    <div class="opensource-copy">
-      <div class="project-kickers"><span>DMIR Lab × Huawei Noah’s Ark Lab</span><span>Benchmark</span></div>
-      <h3><a href="https://tsc-fm.dmirlab.com/">TSC-FM Benchmark — Time Series Classification Foundation Models</a></h3>
-      <p>A public benchmark for comparing foundation-model configurations on time-series classification. It provides searchable leaderboards, dataset profiles, model details, capability analysis, and a documented evaluation protocol.</p>
-      <ul class="project-highlights">
-        <li><strong>220 datasets:</strong> 140 univariate and 80 multivariate datasets on the current official homepage.</li>
-        <li><strong>Four evaluation views:</strong> Standard, Low-shot, Training-Free / In-Context Learning, and Frozen-Probe.</li>
-        <li><strong>Auditable comparisons:</strong> equal weighting across datasets, with coverage and evaluation settings made explicit.</li>
-      </ul>
-      <div class="project-actions"><a href="https://tsc-fm.dmirlab.com/">Open Benchmark ↗</a><a href="https://tsc-fm.dmirlab.com/methods">Model Catalog ↗</a><a href="https://tsc-fm.dmirlab.com/capability-map">Capability Map ↗</a><a href="https://tsc-fm.dmirlab.com/evaluation">Protocol ↗</a></div>
-      <p class="benchmark-note">Benchmark figures reflect the official homepage checked on November 16, 2026.</p>
-    </div>
-  </article>
-
-  <article class="opensource-card">
-    <div class="opensource-visual causal-visual">
-      <a href="https://github.com/py-why/causal-learn" aria-label="Open the causal-learn GitHub repository">
-        <img src="https://raw.githubusercontent.com/py-why/causal-learn/main/docs/source/table_modified_new.png" alt="Method overview image from the official causal-learn documentation" loading="lazy">
+    <figure class="opensource-figure">
+      <a href="https://github.com/DMIRLAB-Group/CDFM/blob/main/docs/figures/benchmark_overview.png">
+        <img src="https://raw.githubusercontent.com/DMIRLAB-Group/CDFM/main/docs/figures/benchmark_overview.png" alt="Official CDFM benchmark overview diagram from the project repository" loading="lazy">
       </a>
-      <span class="visual-credit">Image: causal-learn official documentation</span>
+      <figcaption>Official benchmark overview · CDFM repository</figcaption>
+    </figure>
+    <div class="project-detail-grid">
+      <div><span class="detail-index">01</span><strong>Zero-shot graph inference</strong><p>One pretrained checkpoint is designed to work across different sample sizes and numbers of variables, without task-specific fine-tuning.</p></div>
+      <div><span class="detail-index">02</span><strong>Broad mechanism coverage</strong><p>The project README reports evaluation across 15 mechanism families and real-world benchmarks.</p></div>
+      <div><span class="detail-index">03</span><strong>Missing-value imputation</strong><p>A built-in imputation head provides an additional data-completion capability alongside graph discovery.</p></div>
     </div>
-    <div class="opensource-copy">
-      <div class="project-kickers"><span>Community Project</span><span>Python Toolkit</span><span>MIT License</span></div>
-      <h3><a href="https://github.com/py-why/causal-learn">causal-learn — Causal Discovery in Python</a></h3>
-      <p>An open-source Python library that brings a broad collection of causal discovery methods to researchers and practitioners, with accessible APIs, modular components, and documentation.</p>
-      <ul class="project-highlights">
-        <li><strong>Multiple method families:</strong> constraint-based, score-based, functional causal models, hidden causal representation learning, permutation-based methods, and Granger causality.</li>
-        <li><strong>Reusable building blocks:</strong> independence tests, score functions, graph operations, and evaluation utilities.</li>
-        <li><strong>Community ecosystem:</strong> developed within the PyWhy ecosystem and cited in the Journal of Machine Learning Research.</li>
-      </ul>
-      <div class="project-actions"><a href="https://github.com/py-why/causal-learn">GitHub Repository ↗</a><a href="https://causal-learn.readthedocs.io/en/latest/">Documentation ↗</a><a href="https://www.jmlr.org/papers/v25/23-0970.html">JMLR Paper ↗</a></div>
+    <div class="project-demo">
+      <div><span class="demo-label">QUICK START</span><code>pip install cdfm-base</code></div>
+      <pre><code>from cdfm import CDFM
+
+model = CDFM.from_pretrained("DMIRLAB/CDFM")
+result = model.predict(data)
+causal_graph = result.adjacency</code></pre>
     </div>
+    <div class="project-actions"><a href="https://github.com/DMIRLAB-Group/CDFM">GitHub Repository ↗</a><a href="https://arxiv.org/abs/2607.11508">Paper ↗</a><a href="https://huggingface.co/DMIRLAB/CDFM">Hugging Face Model ↗</a></div>
   </article>
-  <p class="opensource-disclaimer">Project descriptions and linked visuals are sourced from the respective official repositories or project websites. causal-learn is a community project and is not presented as a DMIR Lab-owned repository.</p>
+
+  <article class="opensource-feature">
+    <div class="project-kickers"><span>DMIR Lab × Huawei Noah’s Ark Lab</span><span>Benchmark & Leaderboard</span></div>
+    <h3><a href="https://tsc-fm.dmirlab.com/">TSC-FM Benchmark — Time Series Classification Foundation Models</a></h3>
+    <p>TSC-FM is a public benchmark for evaluating foundation models on time-series classification. Its official site brings together leaderboard results, dataset profiles, method descriptions, capability analysis, and a protocol for transparent and reproducible comparisons.</p>
+    <div class="tscfm-visual" aria-label="TSC-FM benchmark structure diagram">
+      <div class="tscfm-visual-title"><span>TSC-FM</span><span>BENCHMARK FRAMEWORK</span></div>
+      <div class="tscfm-core"><strong>Time-series Classification</strong><span>Foundation Model Evaluation</span></div>
+      <div class="tscfm-branches">
+        <div><b>Standard</b><span>Official train/test splits</span></div>
+        <div><b>Low-shot</b><span>Matched label budgets</span></div>
+      </div>
+      <div class="tscfm-methods">
+        <span>Training-Free / ICL</span><span>Frozen-Probe</span>
+      </div>
+      <div class="tscfm-foot">Leaderboards · Dataset Profiles · Capability Map · Evaluation Protocol</div>
+    </div>
+    <div class="project-detail-grid">
+      <div><span class="detail-index">01</span><strong>Comparable leaderboards</strong><p>Explore overall, Standard, and Low-shot results, with modality and dataset-scope views where available.</p></div>
+      <div><span class="detail-index">02</span><strong>Transparent evaluation</strong><p>The protocol separates label-budget settings from prediction approaches: Standard and Low-shot describe budgets, while Training-Free / ICL and Frozen-Probe describe evaluation approaches.</p></div>
+      <div><span class="detail-index">03</span><strong>Capability analysis</strong><p>Inspect aggregate results by data modality and dataset properties, with coverage and evaluation scope made explicit.</p></div>
+    </div>
+    <div class="project-actions"><a href="https://tsc-fm.dmirlab.com/">Official Benchmark ↗</a><a href="https://tsc-fm.dmirlab.com/leaderboard">Leaderboard ↗</a><a href="https://tsc-fm.dmirlab.com/benchmarks">Dataset Profile ↗</a><a href="https://tsc-fm.dmirlab.com/capability-map">Capability Map ↗</a><a href="https://tsc-fm.dmirlab.com/evaluation">Evaluation Protocol ↗</a></div>
+    <p class="benchmark-note">The benchmark website is the authoritative source for current dataset counts, leaderboard values, and coverage. These values may change as the benchmark is maintained.</p>
+  </article>
+
+  <article class="opensource-feature">
+    <div class="project-kickers"><span>PyWhy Ecosystem</span><span>Python Toolkit</span><span>Community Project</span></div>
+    <h3><a href="https://github.com/py-why/causal-learn">causal-learn — Causal Discovery in Python</a></h3>
+    <p>causal-learn is an open-source Python library that brings a broad collection of causal discovery methods to researchers and practitioners. It combines ready-to-use algorithms with modular building blocks for developing and evaluating new methods.</p>
+    <figure class="opensource-figure causal-figure">
+      <a href="https://github.com/py-why/causal-learn/blob/main/docs/source/search_methods_index/Constraint-based%20causal%20discovery%20methods/pag.png">
+        <img src="https://raw.githubusercontent.com/py-why/causal-learn/main/docs/source/search_methods_index/Constraint-based%20causal%20discovery%20methods/pag.png" alt="Partial ancestral graph example from causal-learn official documentation" loading="lazy">
+      </a>
+      <figcaption>Partial ancestral graph example · causal-learn documentation</figcaption>
+    </figure>
+    <div class="project-detail-grid">
+      <div><span class="detail-index">01</span><strong>Multiple discovery paradigms</strong><p>Includes constraint-based, score-based, functional causal model, hidden causal representation, permutation-based, and Granger-causality methods.</p></div>
+      <div><span class="detail-index">02</span><strong>Reusable research components</strong><p>Provides independence tests, score functions, graph operations, and evaluation utilities for method development.</p></div>
+      <div><span class="detail-index">03</span><strong>Research and learning resource</strong><p>Offers Python APIs, examples, documentation, and a peer-reviewed JMLR software paper.</p></div>
+    </div>
+    <div class="project-demo">
+      <div><span class="demo-label">INSTALL</span><code>pip install causal-learn</code></div>
+      <pre><code>from causallearn.search.ConstraintBased.PC import pc
+from causallearn.utils.cit import fisherz
+
+cg = pc(data, 0.05, fisherz)
+cg.draw_pydot_graph()</code></pre>
+    </div>
+    <div class="project-actions"><a href="https://github.com/py-why/causal-learn">GitHub Repository ↗</a><a href="https://causal-learn.readthedocs.io/en/latest/">Documentation ↗</a><a href="https://www.jmlr.org/papers/v25/23-0970.html">JMLR Paper ↗</a></div>
+    <p class="opensource-disclaimer">causal-learn is a community project in the PyWhy ecosystem; it is included as a relevant research tool, not presented as a DMIR Lab-owned repository.</p>
+  </article>
 </section>
 
 <h2 id="industry-collaboration">Industrial Collaboration</h2>
